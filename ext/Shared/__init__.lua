@@ -105,8 +105,8 @@ local function CreateWorldPart()
 		end
 	end
 
-	print('indexCount is:')
-	print(indexCount)
+	--print('indexCount is:')
+	--print(indexCount)
 
 	for index, object in pairs(CustomLevelData.data) do
 		if(not object.isVanilla) then
@@ -175,7 +175,7 @@ Events:Subscribe('Level:LoadingInfo', function(p_Info)
 			return
 		end
 
-		print("Patching level")
+		--print("Patching level")
 		customRegistry = customRegistry or RegistryContainer(customRegistryGuid)
 		local s_WorldPartReference = CreateWorldPart()
 
@@ -187,7 +187,7 @@ Events:Subscribe('Level:LoadingInfo', function(p_Info)
 		s_Container:MakeWritable()
 		s_Container.referenceObjectRegistry:add(s_WorldPartReference)
 		refObjRegistryIndex = #s_Container.referenceObjectRegistry
-		print('Level patched')
+		--print('Level patched')
 	end
 end)
 
@@ -205,6 +205,7 @@ Events:Subscribe('Level:Destroy', function()
 	worldPartRefIndex = nil
 	refObjRegistryIndex = nil
 	customRegistry = nil
+	CustomLevelData = nil
 
 	-- PrimaryLevel = nil
 end)

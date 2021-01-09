@@ -6,9 +6,9 @@ Events:Subscribe('Level:LoadingInfo', function()
 end)
 NetEvents:Subscribe('MapLoader:GetLevel', function(level)
 	if(level == nil) then
-		print("Received no level")
+		--print("Received no level")
 		return
 	end
-	print('Received transforms for "' .. level.header.mapName .. '".')
+	--print('Received transforms for "' .. level.header.mapName .. '".')
 	CustomLevelData = level
 end)
